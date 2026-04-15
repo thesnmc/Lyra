@@ -9,15 +9,16 @@ import plotly.graph_objects as go
 from PIL import Image 
 import google.generativeai as genai 
 
-# 1. Setup the UI Layout
-st.set_page_config(page_title="Lyra Command Center", layout="wide")
+# 1. Setup the UI Layout (FORCED SIDEBAR OPEN)
+st.set_page_config(page_title="Lyra Command Center", layout="wide", initial_sidebar_state="expanded")
 
 # --- HACKER TERMINAL CSS INJECTION ---
 st.markdown("""
 <style>
     .stApp { background-color: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; }
     h1, h2, h3, h4, h5, h6, p, label, span { color: #00ff41 !important; text-shadow: 0px 0px 5px #00ff41; }
-    #MainMenu {visibility: hidden;} footer {visibility: hidden;} header {visibility: hidden;}
+    #MainMenu {visibility: hidden;} footer {visibility: hidden;} 
+    /* The header hiding code was removed so you don't lose the sidebar toggle button! */
     [data-testid="stSidebar"] { background-color: #0a0a0a; border-right: 1px solid #00ff41; }
     .stTextInput input { background-color: #111 !important; color: #00ff41 !important; border: 1px solid #00ff41 !important; }
 </style>
@@ -202,7 +203,6 @@ if enable_ai:
         else:
             st.success("> ALL SYSTEMS NOMINAL. Data is flowing within standard deviations.")
             
-        # PING THE GEMINI LLM USING DYNAMIC MODEL RADAR
         if anomaly_detected and api_key:
             st.write("> **TRANSMITTING DATA TO CLOUD AI FOR DIAGNOSTIC REPORT...**")
             
@@ -212,18 +212,14 @@ if enable_ai:
                 try:
                     genai.configure(api_key=api_key)
                     
-                    # --- THE DYNAMIC MODEL RADAR ---
-                    # 1. Ask Google what models this specific key is allowed to use
                     available_models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
                     
                     if not available_models:
                         st.error("AI Uplink Failed: Your API key has zero text models assigned to it.")
                     else:
-                        # 2. Try to find a fast 'flash' model, otherwise grab whatever the first valid model is
                         target_model = next((m for m in available_models if 'flash' in m.lower()), available_models[0])
                         st.caption(f"[ Secure AI connection established using model: {target_model} ]")
                         
-                        # 3. Fire the prompt
                         model = genai.GenerativeModel(target_model)
                         prompt = f"You are the AI Science Officer of a spaceship analyzing '{data_source}'. An anomaly occurred: {anomaly_text}. Write a highly professional, 2-sentence scientific report explaining the cosmic event."
                         
