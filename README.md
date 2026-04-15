@@ -68,6 +68,4 @@ NASA Kepler/K2 Mission (Exoplanet Light Curves via Lightkurve)
 
 LIGO Open Science Center (Gravitational Wave Models)
 
-Author: [Your Name/thesnmc]
-
-License: Open Source (MIT)
+thesnmc
