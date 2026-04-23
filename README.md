@@ -1,7 +1,7 @@
 # 🚀 Lyra: Astro-Acoustic Engine
 > A multimodal research workbench translating complex deep-space telemetry into immersive, 3D-spatialized audio to break the visual bottleneck of modern astronomy.
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License]()](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Python-lightgrey)]()
 [![Architecture](https://img.shields.io/badge/Architecture-Data%20Sonification-success)]()
 
