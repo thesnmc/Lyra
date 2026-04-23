@@ -1,5 +1,5 @@
 # 🏗️ Architecture & Design Document: Lyra Astro-Acoustic Engine
-**Version:** 3.1.0 | **Date:** 2026-04-23 | **Author:** [Sujay / thesnmc]
+**Version:** 3.1.0 | **Date:** 2026-04-23 | **Author:** Sujay
 
 ---
 
