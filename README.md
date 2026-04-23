@@ -1,7 +1,7 @@
 # 🚀 Lyra: Astro-Acoustic Engine
 > A multimodal research workbench translating complex deep-space telemetry into immersive, 3D-spatialized audio to break the visual bottleneck of modern astronomy.
 
-[![License]()](LICENSE)
+[![License](https://img.shields.io/badge/License-TheSNMC-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Python-lightgrey)]()
 [![Architecture](https://img.shields.io/badge/Architecture-Data%20Sonification-success)]()
 
@@ -75,5 +75,5 @@ Lyra operates on a decoupled data-to-audio processing pipeline designed to handl
 Contributions, issues, and feature requests are highly welcome! We are actively looking to expand the engine's capabilities with real-time alert brokers (LSST/ZTF), VR mode overlays, and Csound/SuperCollider integration. Feel free to check the issues page if you want to contribute to the Astro-Acoustic frontier.
 
 ## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.  
+see the LICENSE file for details.  
 Built by an independent developer in Chennai, India.
